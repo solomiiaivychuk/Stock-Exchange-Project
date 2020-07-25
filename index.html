@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Stock Exchange</title>
+    <meta name="description" content="Stock Exchange" />
+    <meta name="author" content="Solomiia Ivychuk" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" href="./images/chart-line-solid.png" />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row marquee-wrapper shadow-sm">
+        <div id="marquee" class="marquee-box"></div>
+      </div>
+      <div class="card rounded shadow m-5">
+        <div class="row">
+          <div class="col">
+            <!-- Title -->
+            <div class="container d-flex justify-content-center m-5">
+              <h2>Search Nasdaq Stocks</h2>
+            </div>
+            <!-- Title ends -->
+          </div>
+        </div>
+        <!-- Search navbar -->
+        <div class="row">
+          <div class="col">
+            <div class="container inner d-flex justify-content-center">
+              <div id="form" class="input-group search-navbar"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Search navbar ends -->
+        <!-- Results List -->
+        <div class="row">
+          <div class="col p-5">
+            <div class="container d-flex justify-content-center">
+              <div class="results-wrapper p-0"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Results List ends -->
+      </div>
+    </div>
+    <div id="loader" class="spinner-grow loader ml-4 d-none" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <script src="./js/Loader.js"></script>
+    <script src="./js/Marquee.js"></script>
+    <script src="./js/SearchForm.js"></script>
+    <script src="./js/SearchResult.js"></script>
+    <script src="./js/scripts.js"></script>
+    <script>
+      const marquee = new Marquee(document.getElementById("marquee"));
+      marquee.fetchData();
+      const searchForm = new SearchForm(document.getElementById("search"));
+      const searchResult = new SearchResult(
+        document.getElementById("search-result")
+      );
+      searchForm.onSearch((companies) => {
+        searchResult.display(companies);
+      });
+    </script>
+  </body>
+</html>

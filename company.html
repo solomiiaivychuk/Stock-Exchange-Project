@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Stock Exchange-Company Profile</title>
+    <meta name="description" content="Stock Exchange" />
+    <meta name="author" content="Solomiia Ivychuk" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./images/chart-line-solid.png" />
+    <link rel="stylesheet" href="./css/styles-company.css" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="card m-5 rounded shadow">
+        <div class="row">
+          <div class="col d-flex justify-content-center">
+            <div class="container m-5 p-5">
+              <div class="row mb-3">
+                <div class="col-1"><img src="" class="comp-symbol" /></div>
+                <div class="col-11">
+                  <a href="" class="d-flex align-self-center comp-name"></a>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-4 comp-stock-price">Stock price: $</div>
+                <div class="col-8 comp-changes"></div>
+              </div>
+              <div class="row mb-3 d-flex comp">
+                <div class="col comp-description"></div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="container">
+                    <canvas id="myChart" width="400" height="200"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="./js/Companies.js"></script>
+  </body>
+</html>
